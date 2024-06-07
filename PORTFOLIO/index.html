@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link  rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+<body>
+<div id="header">
+    <div class ="container">
+        <nav>
+            <img src ="LOGO.jpg" class = "logo">
+            <ul>
+                <li><a href="#header" >Home</a></li>
+                <li><a href="#about" >About</a></li>
+                <li><a href="#Social-media" >Social-Media</a></li>
+                <li><a href="#contact" >Contact</a></li>
+
+            </ul> 
+        </nav>
+        <div class="header-text"><p>Student</p>
+        <h1>Hi, I'm <span>
+            Lavudiya Bharath Chandra 
+        </span> <br> From India</h1></div>
+    </div>
+    <a href="Resume.pdf" download class="btn"> Download CV</a>
+</div>
+<!---about---------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="1.jpg" width="700" height="700">
+            </div>
+            <div class="about-col-2"><h2 class="sub-title">About Me<h2>
+                <p> Welcome to my digital space! I'm a passionate and versatile individual 
+                    dedicated to the realms of technology and language. With a foundation in artificial intelligence
+                     and a knack for creative expression, I thrive on the intersection of innovation and communication. 
+                     Join me on this journey as we explore the fascinating possibilities at the crossroads of code and language.
+                </p>
+                <div class="tab-titles">
+                    <p class="tabs-links ">Education</p>
+                </div>
+                <div class="tab-contents" id = "Education">
+                    <ul>
+                        <li><span>Present </span> <br> B.tech</span></li>
+                        <li><span>2021 </span> <br> INTER</span></li> 
+                          <li><span>2019 </span> <br> SSC</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--------- Social Media------->
+<div id="Social-media">
+    <div class="container">
+        <div class="row">
+    
+            <h2 class="sub-title">Social-media</h2>
+            <h3><br></h3>
+            <div class="social-icons">
+            <a href=""><i class="fab fa-linkedin"></i> LinkedIn<a>
+            <a href=""><i class="fab fa-instagram"> Instagram</i></a>
+
+            <a href=""><i class="fab fa-whatsapp"> Whatsapp</i></a>
+        </div>
+
+        </div>
+    </div>
+</div>
+<!------------ Contact  -------------->
+<div id ="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1  class="sub-title">Contact Me</h1> 
+                <p><i class ="fas fa-paper-plane"></i> bharath@gmail.com</p>
+                <p><i class ="fas fa-phone-square-alt"></i> +91 91540*****</p>
+                
+            </div>
+                <div class="contact-right">
+            <form name ="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your email" required>
+                <textarea name="Message"  rows="6" placeholder=" Your Message"></textarea>
+                <button type ="Submit" class="btn2">Submit</button>
+            </form>
+            <span></span>
+                 </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>
+            Copyright © Bharath 
+        </p>
+    </div>
+</div>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbygSPXA-sX1J7UKOwpH7ewaLU_fincKs9j1fT_DB332AnFByySkDeeN2bGoYwyfGzlG/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML="Message sent Successfully"
+            setTimeout(function(){msg.innerHTML=""},5000)
+        })
+        form.reset()
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+<li><a href="#header" >Home</a></li>
+</html>
